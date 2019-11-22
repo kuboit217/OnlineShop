@@ -5,12 +5,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
 }
 
-<h2>AddSlide</h2>
+@section breadcrumb
+{
+    Thêm slideshow
+}
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Slide</h4>
         <hr />
