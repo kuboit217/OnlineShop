@@ -17,6 +17,11 @@ namespace OnlineShop.Areas.Admin.Controllers
             ViewBag.SearchString = searchString;
             return View(model);
         }
+
+        public ActionResult AddSlide()
+        {
+            return View();
+        }
         //ham đổi status
         public JsonResult ChangeStatus(long id)
         {
