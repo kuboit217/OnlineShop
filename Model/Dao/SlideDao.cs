@@ -32,6 +32,22 @@ namespace Model.Dao
             }
             return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
         }
+
+        //hàm xóa slideshow
+        public bool Delete(int id)
+        {
+            try
+            {
+                var slide = db.Slides.Find(id);
+                db.Slides.Remove(slide);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         //hàm changestatus kích hoạt khóa
         public bool ChangeStatus(long id)
         {

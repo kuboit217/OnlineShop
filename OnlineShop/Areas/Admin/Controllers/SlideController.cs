@@ -22,6 +22,14 @@ namespace OnlineShop.Areas.Admin.Controllers
         {
             return View();
         }
+        //hàm xóa một bản ghi trong user
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            new SlideDao().Delete(id);
+            SetAlert("Xóa user thành công", "success");
+            return RedirectToAction("Index");
+        }
         //ham đổi status
         public JsonResult ChangeStatus(long id)
         {
