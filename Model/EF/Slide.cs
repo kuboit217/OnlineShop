@@ -1,7 +1,8 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -12,17 +13,24 @@ namespace Model.EF
         public long ID { get; set; }
 
         [StringLength(10)]
+        [DisplayName("Hình ảnh")][Required]
         public string Image { get; set; }
 
         [StringLength(10)]
+        [DisplayName("Thứ tự")][Required]
         public string DisplayOrrder { get; set; }
 
         [StringLength(10)]
+        [DisplayName("Link")]
+        [Required]
         public string Link { get; set; }
-
+        [DisplayName("Trạng thái")]
+        [Required]
         public bool Status { get; set; }
 
         [StringLength(10)]
+        [DisplayName("Mô tả")]
+        [Required]
         public string Description { get; set; }
 
         public DateTime? CreateDate { get; set; }
