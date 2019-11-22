@@ -89,8 +89,8 @@
 
                                             <div class="form-group row">
                                                 @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-3 font-weight-bold" })
-                                                <div class="col-md-3">
-                                                    @Html.TextBoxFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.Status)
                                                     @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
                                                 </div>
                                             </div>
