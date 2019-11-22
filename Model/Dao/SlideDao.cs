@@ -32,6 +32,14 @@ namespace Model.Dao
             }
             return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
         }
+        //Thêm bản ghi slideshow
+        public long Insert(Slide entity)
+        {
+            db.Slides.Add(entity);
+            db.SaveChanges();
+
+            return entity.ID;
+        }
 
         //hàm xóa slideshow
         public bool Delete(int id)

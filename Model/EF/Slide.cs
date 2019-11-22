@@ -12,7 +12,7 @@
     {
         public long ID { get; set; }
 
-        [StringLength(10)]
+        [StringLength(255)]
         [DisplayName("Hình ảnh")][Required]
         public string Image { get; set; }
 
@@ -30,7 +30,6 @@
 
         [StringLength(10)]
         [DisplayName("Mô tả")]
-        [Required]
         public string Description { get; set; }
 
         public DateTime? CreateDate { get; set; }

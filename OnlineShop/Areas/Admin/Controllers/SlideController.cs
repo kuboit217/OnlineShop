@@ -1,4 +1,5 @@
 ﻿using Model.Dao;
+using Model.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,37 @@ namespace OnlineShop.Areas.Admin.Controllers
             SetAlert("Xóa user thành công", "success");
             return RedirectToAction("Index");
         }
+
+        //Thêm mới user
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Slide slide)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new SlideDao();
+
+                
+                slide.CreateDate = DateTime.Now;
+                slide.CreateBy = Common.CommonConstants.USER_SESSION;
+                long id = dao.Insert(slide);
+                if (id > 0)
+                {
+                    SetAlert("Thêm slides thành công", "success");
+                    return RedirectToAction("Index", "Slide");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Thêm slides không thành công");
+                }
+            }
+            else
+            {
+                return View("AddSlide");
+            }
+            return View("Index");
+        }
+
         //ham đổi status
         public JsonResult ChangeStatus(long id)
         {
