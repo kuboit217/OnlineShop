@@ -235,6 +235,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
@@ -255,6 +256,7 @@
   <ItemGroup>
     <Content Include="Assets\admin\css\sb-admin.css" />
     <Content Include="Assets\admin\css\sb-admin.min.css" />
+    <Content Include="Assets\admin\js\controller\aboutController.js" />
     <Content Include="Assets\admin\js\controller\slideController.js" />
     <Content Include="Assets\admin\js\controller\userController.js" />
     <Content Include="Assets\admin\js\demo\chart-area-demo.js" />
@@ -3302,6 +3304,7 @@
     <Content Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <Content Include="libman.json" />
     <Content Include="Areas\Admin\Views\Slide\EditSide.cshtml" />
+    <Content Include="Areas\Admin\Views\About\Index.cshtml" />
     <None Include="_bin_deployableAssemblies\amd64\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\amd64\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\amd64\sqlceme40.dll" />

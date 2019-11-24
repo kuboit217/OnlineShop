@@ -75,10 +75,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var dao = new SlideDao();
-
-                
-                var result = dao.Update(slide);
+                var result = new SlideDao().Update(slide);
                 if (result)
                 {
                     SetAlert("Cập nhật slideshow thành công", "success");

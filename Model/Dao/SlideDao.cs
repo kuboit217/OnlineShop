@@ -17,12 +17,12 @@ namespace Model.Dao
         {
             db = new OnlineShopDbContext();
         }
-
+        //đưa ra trang chủ
         public List<Slide> ListAll()
         {
             return db.Slides.Where(x => x.Status == true).OrderBy(x => x.DisplayOrrder).ToList();
         }
-
+        //đưa vào index trang quản trị
         public IEnumerable<Slide> ListAllPaging(string searchString, int page, int pageSize)
         {
             IQueryable<Slide> model = db.Slides;
