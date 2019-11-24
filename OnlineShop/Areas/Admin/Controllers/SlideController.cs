@@ -62,6 +62,40 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View("Index");
         }
 
+        // hàm lấy thông tin của 1 user theo khóa chính
+        public ActionResult EditSide(int id)
+        {
+            var slide = new SlideDao().ViewDetail(id);
+            return View(slide);
+        }
+
+        // hàm cập nhật thông tin user
+        [HttpPost]
+        public ActionResult EditSlide(Slide slide)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new SlideDao();
+
+                
+                var result = dao.Update(slide);
+                if (result)
+                {
+                    SetAlert("Cập nhật slideshow thành công", "success");
+                    return RedirectToAction("Index", "Slide");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Cập nhật slideshow không thành công");
+                }
+            }
+            else
+            {
+                return View("EditSlide");
+            }
+            return View("Index");
+        }
+
         //ham đổi status
         public JsonResult ChangeStatus(long id)
         {

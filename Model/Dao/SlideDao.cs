@@ -41,6 +41,32 @@ namespace Model.Dao
             return entity.ID;
         }
 
+        public Slide ViewDetail(int id)
+        {
+            return db.Slides.Find(id);
+        }
+
+        //update banr ghi trong usser
+        public bool Update(Slide entity)
+        {
+            try
+            {
+                var slide = db.Slides.Find(entity.ID);
+
+                slide.Image = entity.Image;
+                slide.Link = entity.Link;
+                slide.DisplayOrrder = entity.DisplayOrrder;
+                slide.Status = entity.Status;
+                slide.ModifiedDate = DateTime.Now;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
         //hàm xóa slideshow
         public bool Delete(int id)
         {
