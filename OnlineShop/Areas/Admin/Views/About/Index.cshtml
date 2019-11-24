@@ -33,7 +33,7 @@
             <div class="col-6">
             </div>
             <div class="col">
-                <a href="/Admin/About/AddAbout" type="button" class="btn btn-primary">Thêm Mới</a>
+                <a href="/Admin/About/Add" type="button" class="btn btn-primary">Thêm Mới</a>
             </div>
         </div>
         <br />
@@ -70,7 +70,7 @@
                             <td>@item.ID</td>
                             <td>@item.Name</td>
                             <td>@item.Image</td>
-                            <td>@item.Detail</td>
+                            <td>@item.MetaDescriptions</td>
                             <td>@item.CreateDate</td>
                             <td>@item.ModifiedDate</td>
                             <td><a href="#" class="btn-active" data-id="@item.ID">@Html.Raw(item.Status ? "<strong>Kích hoạt</strong>" : "Khoá")</a></td>

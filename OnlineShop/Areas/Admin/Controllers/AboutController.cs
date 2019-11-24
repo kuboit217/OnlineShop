@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace OnlineShop.Areas.Admin.Controllers
 {
-    public class AboutController : Controller
+    public class AboutController : BaseController
     {
         // GET: Admin/About
         public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
@@ -16,6 +16,13 @@ namespace OnlineShop.Areas.Admin.Controllers
             var model = dao.ListAllPaging(searchString, page, pageSize);
             ViewBag.SearchString = searchString;
             return View(model);
+        }
+
+        //hàm thêm phần giới thiệu
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
         }
 
         //hàm Json gọi nút kích hoạt
